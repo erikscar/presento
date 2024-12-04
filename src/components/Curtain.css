@@ -1,0 +1,50 @@
+.curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 2;
+    transition: z-index 10s ease;
+  }
+  
+  .curtain-container.opened {
+    cursor: default; 
+    z-index: -1;
+  }
+
+  .curtain {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('../assets/cortina.png'); 
+    background-size: cover;  
+    background-position: center;
+    box-shadow: inset -5px 0 10px rgba(0, 0, 0, 0.5); 
+    transition: all 3s ease-in-out;
+  }
+  
+  .left {
+    left: 0;
+    transform: translateX(0);
+  }
+  
+  .right {
+    right: 0;
+    transform: translateX(0);
+  }
+  
+  .curtain-container.opened .left {
+    transform: translateX(-100%);  /* Move a cortina para a esquerda */
+  }
+  
+  .curtain-container.opened .right {
+    transform: translateX(100%);  /* Move a cortina para a direita */
+  }
+  
